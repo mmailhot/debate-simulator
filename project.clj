@@ -70,14 +70,14 @@
                                                           :optimizations :none
                                                           :pretty-print  true}}}}}
 
-             :uberjar {:source-paths ["src/cljs"]
+             :uberjar {:source-paths ["env/prod/clj"]
                        :hooks [leiningen.cljsbuild]
                        :env {:production true}
                        :omit-source true
                        :aot :all
                        :main debatesim.server
                        :cljsbuild {:builds {:app
-                                            {:source-paths ["env/prod/cljs"]
+                                            {:source-paths ["src/cljs"]
                                              :compiler
                                              {:optimizations :none
                                               :pretty-print true}}}}}})
