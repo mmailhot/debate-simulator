@@ -5,11 +5,11 @@
 
 (def data
   {
-   "harper" (edn/read-string (-> "edn/harper.edn" slurp))
-   "trudeau" (edn/read-string (-> "edn/trudeau.edn" slurp))
-   "mulcair" (edn/read-string (-> "edn/mulcair.edn" slurp))
-   "may" (edn/read-string (-> "edn/may.edn" slurp))
-   "moderator" (edn/read-string (-> "edn/moderator.edn" slurp))
+   "harper" (edn/read-string (-> "edn/harper.edn" io/resource slurp))
+   "trudeau" (edn/read-string (-> "edn/trudeau.edn" io/resource slurp))
+   "mulcair" (edn/read-string (-> "edn/mulcair.edn" io/resource slurp))
+   "may" (edn/read-string (-> "edn/may.edn" io/resource slurp))
+   "moderator" (edn/read-string (-> "edn/moderator.edn" io/resource slurp))
    }
  )
 
