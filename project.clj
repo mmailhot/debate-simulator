@@ -1,8 +1,8 @@
 (defproject debatesim "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :license {:name "RealNetworks Public Source License Version 1.0"
+            :url "https://opensource.org/licenses/RPSL-1.0"}
 
   :source-paths ["src/clj"]
 
@@ -17,7 +17,11 @@
                  [org.omcljs/om "0.8.8"]
                  [environ "1.0.0"]
                  [http-kit "2.1.19"]
-                 [prismatic/om-tools "0.3.11"]]
+                 [prismatic/om-tools "0.3.11"]
+                 [hickory "0.5.4"]
+                 [clj-http-lite "0.3.0"]
+                 [janiczek/markov "0.3.0"]
+                 [com.cognitect/transit-clj "0.8.281"]]
 
   :plugins [[lein-cljsbuild "1.0.5"]
             [lein-environ "1.0.0"]]
@@ -43,7 +47,8 @@
                                   [weasel "0.6.0"]]
 
                    :repl-options {:init-ns debatesim.server
-                                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+                                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]
+                                  :timeout 120000}
 
                    :plugins [[lein-figwheel "0.2.5"]]
 
