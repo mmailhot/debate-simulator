@@ -22,9 +22,9 @@
 
 (defn speak [text]
   (let [u (js/SpeechSynthesisUtterance. text)
-        voices (.getVoices js/window.speechSynthesis)]
+        voices (-> js/window .-speechSynthesis .getVoices)]
     (set! (.-voice u) (get voices 1))
-    (.speak js/window.speechSynthesis u)))
+    (-> js/window .-speechSynthesis (.speak u))))
 
 (defn build-remover [speaker]
   (fn []
