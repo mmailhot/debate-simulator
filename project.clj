@@ -67,7 +67,7 @@
                                                           :output-dir    "resources/public/js/test"
                                                           :source-map    "resources/public/js/test.js.map"
                                                           :preamble      ["react/react.min.js"]
-                                                          :optimizations :none
+                                                          :optimizations :whitespace
                                                           :pretty-print  true}}}}}
 
              :uberjar {:source-paths ["env/prod/clj"]
@@ -77,7 +77,7 @@
                        :aot :all
                        :main debatesim.server
                        :cljsbuild {:builds {:app
-                                            {:source-paths ["src/cljs"]
+                                            {:source-paths ["env/prod/cljs"]
                                              :compiler
-                                             {:optimizations :none
+                                             {:optimizations :whitespace
                                               :pretty-print true}}}}}})
