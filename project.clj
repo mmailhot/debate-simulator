@@ -67,8 +67,8 @@
                                                           :output-dir    "resources/public/js/test"
                                                           :source-map    "resources/public/js/test.js.map"
                                                           :preamble      ["react/react.min.js"]
-                                                          :optimizations :whitespace
-                                                          :pretty-print  false}}}}}
+                                                          :optimizations :none
+                                                          :pretty-print  true}}}}}
 
              :uberjar {:source-paths ["env/prod/clj"]
                        :hooks [leiningen.cljsbuild]
@@ -79,5 +79,5 @@
                        :cljsbuild {:builds {:app
                                             {:source-paths ["env/prod/cljs"]
                                              :compiler
-                                             {:optimizations :advanced
-                                              :pretty-print false}}}}}})
+                                             {:optimizations :none
+                                              :pretty-print true}}}}}})
