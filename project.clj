@@ -70,7 +70,7 @@
                                                           :optimizations :none
                                                           :pretty-print  true}}}}}
 
-             :uberjar {:source-paths ["env/prod/clj"]
+             :uberjar {:source-paths ["src/cljs"]
                        :hooks [leiningen.cljsbuild]
                        :env {:production true}
                        :omit-source true
