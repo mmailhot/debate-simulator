@@ -21,7 +21,8 @@
                  [hickory "0.5.4"]
                  [clj-http-lite "0.3.0"]
                  [janiczek/markov "0.3.0"]
-                 [com.cognitect/transit-clj "0.8.281"]]
+                 [com.cognitect/transit-clj "0.8.281"]
+                 [cljs-ajax "0.5.0"]]
 
   :plugins [[lein-cljsbuild "1.0.5"]
             [lein-environ "1.0.0"]]

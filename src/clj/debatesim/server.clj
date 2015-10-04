@@ -8,8 +8,13 @@
             [ring.middleware.reload :as reload]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
             [environ.core :refer [env]]
-            [org.httpkit.server :refer [run-server]])
+            [org.httpkit.server :refer [run-server]]
+            [debatesim.utils.generate :refer [generate-markov]]
+            )
   (:gen-class))
+
+(defn get-markov [speaker]
+  (generate-markov speaker))
 
 (deftemplate page (io/resource "index.html") []
   [:body] (if is-dev? inject-devmode-html identity))
@@ -17,7 +22,8 @@
 (defroutes routes
   (resources "/")
   (resources "/react" {:root "react"})
-  (GET "/*" req (page)))
+  (GET "/" req (page))
+  (GET "/:speaker" [speaker] (get-markov speaker)))
 
 (def http-handler
   (if is-dev?
